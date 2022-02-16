@@ -1,0 +1,27 @@
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        ListNode odd=head;
+        if(head==null || head.next==null )
+            return head;
+        else
+        {
+            ListNode even=head.next;
+            while(odd.next!=null && even.next!=null)
+            {
+                int temp=even.val;
+                even.val=odd.val;
+                odd.val=temp;
+                
+                odd=even.next;
+                even=odd.next;
+            }
+            if(even!=null)
+            {
+            int temp=even.val;
+                even.val=odd.val;
+                odd.val=temp;
+            }
+        }
+        return head;
+    }
+}
