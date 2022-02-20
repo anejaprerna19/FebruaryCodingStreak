@@ -1,0 +1,15 @@
+class Solution {
+    public int removeCoveredIntervals(int[][] intervals) {
+        Arrays.sort(intervals,(i,j)->(i[0]==j[0]?j[1]-i[1]:i[0]-j[0]));
+     int count=0,curr=0;
+        for(int val[]:intervals)
+        {
+            if(curr<val[1])
+            {
+                curr=val[1];
+                count++;
+            }
+        }
+        return count;
+    }
+}
